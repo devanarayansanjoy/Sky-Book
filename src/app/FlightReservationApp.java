@@ -1,10 +1,10 @@
-package com.skybook.main;
+package app;
 
-import com.skybook.model.*;
-import com.skybook.data.*;
-import com.skybook.ui.*;
-import com.skybook.ui.components.*;
-import com.skybook.util.*;
+import model.*;
+import data.*;
+import ui.*;
+import ui.components.*;
+import util.*;
 
 public class FlightReservationApp {
     public static void main(String[] args) {

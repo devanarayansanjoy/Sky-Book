@@ -1,10 +1,10 @@
-package com.skybook.data;
+package data;
 
-import com.skybook.model.*;
-import com.skybook.ui.*;
-import com.skybook.ui.components.*;
-import com.skybook.util.*;
-import com.skybook.main.*;
+import model.*;
+import ui.*;
+import ui.components.*;
+import util.*;
+import app.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

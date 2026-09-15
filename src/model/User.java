@@ -1,10 +1,10 @@
-package com.skybook.model;
+package model;
 
-import com.skybook.data.*;
-import com.skybook.ui.*;
-import com.skybook.ui.components.*;
-import com.skybook.util.*;
-import com.skybook.main.*;
+import data.*;
+import ui.*;
+import ui.components.*;
+import util.*;
+import app.*;
 
 public class User {
     private String id;

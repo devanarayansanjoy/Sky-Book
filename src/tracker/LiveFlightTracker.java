@@ -1,11 +1,11 @@
-package com.skybook.tracker;
+package tracker;
 
-import com.skybook.model.*;
-import com.skybook.data.*;
-import com.skybook.ui.*;
-import com.skybook.ui.components.*;
-import com.skybook.util.*;
-import com.skybook.main.*;
+import model.*;
+import data.*;
+import ui.*;
+import ui.components.*;
+import util.*;
+import app.*;
 
 import java.io.*;
 import java.net.HttpURLConnection;
