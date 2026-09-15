@@ -1,3 +1,11 @@
+package com.skybook.ui;
+
+import com.skybook.model.*;
+import com.skybook.data.*;
+import com.skybook.ui.components.*;
+import com.skybook.util.*;
+import com.skybook.main.*;
+
 import javax.swing.*;
 import java.awt.*;
 

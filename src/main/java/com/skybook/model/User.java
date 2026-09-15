@@ -1,3 +1,11 @@
+package com.skybook.model;
+
+import com.skybook.data.*;
+import com.skybook.ui.*;
+import com.skybook.ui.components.*;
+import com.skybook.util.*;
+import com.skybook.main.*;
+
 public class User {
     private String id;
     private String username;

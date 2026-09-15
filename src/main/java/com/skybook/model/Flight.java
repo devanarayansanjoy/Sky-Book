@@ -1,3 +1,11 @@
+package com.skybook.model;
+
+import com.skybook.data.*;
+import com.skybook.ui.*;
+import com.skybook.ui.components.*;
+import com.skybook.util.*;
+import com.skybook.main.*;
+
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
