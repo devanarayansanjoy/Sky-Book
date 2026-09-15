@@ -6,11 +6,13 @@ import ui.components.*;
 import util.*;
 import app.*;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Flight {
+public class Flight implements Serializable {
+    private static final long serialVersionUID = 1L;
     private String flightNo;
     private String from;
     private String to;

@@ -6,10 +6,12 @@ import ui.components.*;
 import util.*;
 import app.*;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Set;
 
-public class Reservation {
+public class Reservation implements Serializable {
+    private static final long serialVersionUID = 1L;
     private static int counter = 1000;
     private final String reservationId;
     private final Flight flight;

@@ -59,6 +59,7 @@ public class ReservationsPanel extends JPanel {
                 int confirm = JOptionPane.showConfirmDialog(this, "Are you sure you want to cancel booking " + resId + " for a full refund?", "Confirm", JOptionPane.YES_NO_OPTION);
                 if (confirm == JOptionPane.YES_OPTION) {
                     res.cancel();
+                    FlightDatabase.removeReservation(res);
                     JOptionPane.showMessageDialog(this, "Booking cancelled. Refund of $" + res.getTotalPrice() + " processed.");
                     loadReservations();
                 }

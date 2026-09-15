@@ -6,6 +6,7 @@ import ui.components.*;
 import util.*;
 import app.*;
 
+import java.io.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,9 +14,12 @@ import java.util.stream.Collectors;
 
 public class FlightDatabase {
     private static final List<Flight> flights = new ArrayList<>();
-    private static final List<Reservation> reservations = new ArrayList<>();
+    private static List<Reservation> reservations = new ArrayList<>();
+    private static final String DATA_FILE = "reservations.dat";
 
     static {
+        loadFromFile();
+        
         // 10 Sample Flights
         flights.add(new Flight("AI101", "New York", "London", LocalDate.now().plusDays(2), "08:00", "20:00", 450.0, 1200.0, 42));
         flights.add(new Flight("BA202", "London", "Dubai", LocalDate.now().plusDays(3), "14:30", "23:45", 380.0, 950.0, 30));
@@ -71,6 +75,12 @@ public class FlightDatabase {
 
     public static void addReservation(Reservation r) {
         reservations.add(r);
+        saveToFile();
+    }
+
+    public static void removeReservation(Reservation r) {
+        reservations.remove(r);
+        saveToFile();
     }
 
     public static List<Reservation> getReservationsForUser(User u) {
@@ -81,5 +91,22 @@ public class FlightDatabase {
 
     public static List<Reservation> getAllReservations() {
         return new ArrayList<>(reservations);
+    }
+
+    @SuppressWarnings("unchecked")
+    private static void loadFromFile() {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(DATA_FILE))) {
+            reservations = (List<Reservation>) ois.readObject();
+        } catch (Exception e) {
+            System.out.println("No existing reservations file found or error loading. Starting fresh.");
+        }
+    }
+
+    private static void saveToFile() {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(DATA_FILE))) {
+            oos.writeObject(reservations);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
