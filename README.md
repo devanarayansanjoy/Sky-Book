@@ -54,7 +54,6 @@ Sky-Book/
 │   ├── ui/                 # Swing Windows, Panels, and Dialogs
 │   │   └── components/     # Custom Swing UI elements (Autocomplete)
 │   ├── util/               # Helper utilities (Receipt Generator)
-│   └── tracker/            # Live Flight Tracking Maps
 ├── users.dat               # Persisted user accounts (generated on run)
 └── reservations.dat        # Persisted flight bookings (generated on run)
 ```

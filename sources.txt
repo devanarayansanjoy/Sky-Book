@@ -11,7 +11,6 @@ src/ui/ReservationsPanel.java
 src/ui/BookingDialog.java
 src/app/FlightReservationApp.java
 src/util/ReceiptGenerator.java
-src/tracker/LiveFlightTracker.java
 src/model/Reservation.java
 src/model/User.java
 src/model/Flight.java
