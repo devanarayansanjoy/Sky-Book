@@ -27,23 +27,36 @@ public class AdminPanel extends JPanel {
     }
 
     private void initForm() {
-        JPanel form = new JPanel(new GridLayout(5, 4, 5, 5));
+        JPanel form = new JPanel(new GridBagLayout());
         form.setBorder(BorderFactory.createTitledBorder("Add New Flight"));
+        GridBagConstraints gc = new GridBagConstraints();
+        gc.insets = new Insets(5, 5, 5, 5);
+        gc.fill = GridBagConstraints.HORIZONTAL;
 
-        form.add(new JLabel("Flight No:")); fNoField = new JTextField(); form.add(fNoField);
-        form.add(new JLabel("From:")); fromField = new JTextField(); form.add(fromField);
-        form.add(new JLabel("To:")); toField = new JTextField(); form.add(toField);
-        form.add(new JLabel("Date (YYYY-MM-DD):")); dateField = new JTextField(); form.add(dateField);
-        form.add(new JLabel("Depart (HH:MM):")); depField = new JTextField(); form.add(depField);
-        form.add(new JLabel("Arrive (HH:MM):")); arrField = new JTextField(); form.add(arrField);
-        form.add(new JLabel("Eco Price ($):")); ecoField = new JTextField(); form.add(ecoField);
-        form.add(new JLabel("Bus Price ($):")); busField = new JTextField(); form.add(busField);
-        form.add(new JLabel("Capacity:")); capField = new JTextField(); form.add(capField);
+        gc.gridy = 0; gc.gridx = 0;
+        form.add(new JLabel("Flight No:"), gc); fNoField = new JTextField(10); gc.gridx = 1; form.add(fNoField, gc);
+        gc.gridx = 2; form.add(new JLabel("From:"), gc); fromField = new JTextField(10); gc.gridx = 3; form.add(fromField, gc);
+
+        gc.gridy = 1; gc.gridx = 0;
+        form.add(new JLabel("To:"), gc); toField = new JTextField(10); gc.gridx = 1; form.add(toField, gc);
+        gc.gridx = 2; form.add(new JLabel("Date (YYYY-MM-DD):"), gc); dateField = new JTextField(10); gc.gridx = 3; form.add(dateField, gc);
+
+        gc.gridy = 2; gc.gridx = 0;
+        form.add(new JLabel("Depart (HH:MM):"), gc); depField = new JTextField(10); gc.gridx = 1; form.add(depField, gc);
+        gc.gridx = 2; form.add(new JLabel("Arrive (HH:MM):"), gc); arrField = new JTextField(10); gc.gridx = 3; form.add(arrField, gc);
+
+        gc.gridy = 3; gc.gridx = 0;
+        form.add(new JLabel("Eco Price ($):"), gc); ecoField = new JTextField(10); gc.gridx = 1; form.add(ecoField, gc);
+        gc.gridx = 2; form.add(new JLabel("Bus Price ($):"), gc); busField = new JTextField(10); gc.gridx = 3; form.add(busField, gc);
+
+        gc.gridy = 4; gc.gridx = 0;
+        form.add(new JLabel("Capacity:"), gc); capField = new JTextField(10); gc.gridx = 1; form.add(capField, gc);
 
         JButton addBtn = new JButton("Add Flight");
-        form.add(new JLabel("")); // filler
-        form.add(new JLabel("")); // filler
-        form.add(addBtn);
+        gc.gridy = 5; gc.gridx = 0; gc.gridwidth = 4;
+        gc.fill = GridBagConstraints.NONE;
+        gc.anchor = GridBagConstraints.CENTER;
+        form.add(addBtn, gc);
 
         addBtn.addActionListener(e -> {
             try {

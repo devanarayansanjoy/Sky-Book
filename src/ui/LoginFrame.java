@@ -74,17 +74,8 @@ public class LoginFrame extends JFrame {
         });
 
         registerBtn.addActionListener(e -> {
-            String u = userField.getText();
-            String p = new String(passField.getPassword());
-            if (u.isBlank() || p.isBlank()) {
-                JOptionPane.showMessageDialog(this, "Please fill in username and password to register.", "Error", JOptionPane.ERROR_MESSAGE);
-                return;
-            }
-            if (UserDatabase.registerUser(u, p, u, false)) {
-                JOptionPane.showMessageDialog(this, "Registration successful! You can now log in.", "Success", JOptionPane.INFORMATION_MESSAGE);
-            } else {
-                JOptionPane.showMessageDialog(this, "Username already exists.", "Error", JOptionPane.ERROR_MESSAGE);
-            }
+            RegistrationDialog dialog = new RegistrationDialog(this);
+            dialog.setVisible(true);
         });
 
         add(panel);

@@ -19,10 +19,10 @@ public class UserDatabase {
         loadFromFile();
         // Ensure admin and user exist
         if (!users.containsKey("admin")) {
-            registerUser("admin", "admin123", "System Administrator", true);
+            registerUser("admin", "admin123", "System Administrator", "admin@skybook.com", "555-0000", true);
         }
         if (!users.containsKey("user")) {
-            registerUser("user", "password", "Regular User", false);
+            registerUser("user", "password", "Regular User", "user@skybook.com", "555-1111", false);
         }
     }
 
@@ -43,14 +43,21 @@ public class UserDatabase {
         }
     }
 
-    public static boolean registerUser(String username, String password, String fullName, boolean isAdmin) {
+    public static boolean registerUser(String username, String password, String fullName, String email, String phoneNumber, boolean isAdmin) {
         if (users.containsKey(username.toLowerCase())) {
             return false; // Username exists
         }
         String id = "U" + (1000 + users.size());
-        users.put(username.toLowerCase(), new User(id, username, password, fullName, isAdmin));
+        users.put(username.toLowerCase(), new User(id, username, password, fullName, email, phoneNumber, isAdmin));
         saveToFile();
         return true;
+    }
+
+    public static void updateUser(User updatedUser) {
+        if (users.containsKey(updatedUser.getUsername().toLowerCase())) {
+            users.put(updatedUser.getUsername().toLowerCase(), updatedUser);
+            saveToFile();
+        }
     }
 
     public static User login(String username, String password) {

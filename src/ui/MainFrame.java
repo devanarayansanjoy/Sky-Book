@@ -19,6 +19,7 @@ public class MainFrame extends JFrame {
         JTabbedPane tabs = new JTabbedPane();
         tabs.addTab("Search Flights", new SearchPanel());
         tabs.addTab("My Reservations", new ReservationsPanel());
+        tabs.addTab("My Profile", new ProfilePanel());
         
         if (UserDatabase.getLoggedInUser() != null && UserDatabase.getLoggedInUser().isAdmin()) {
             tabs.addTab("Admin - Manage Flights", new AdminPanel());

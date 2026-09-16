@@ -1,9 +1,11 @@
 src/ui/LoginFrame.java
 src/ui/PaymentDialog.java
 src/ui/SeatMapDialog.java
+src/ui/RegistrationDialog.java
 src/ui/MainFrame.java
 src/ui/SearchPanel.java
 src/ui/components/AutoCompleteTextField.java
+src/ui/ProfilePanel.java
 src/ui/AdminPanel.java
 src/ui/ReservationsPanel.java
 src/ui/BookingDialog.java
